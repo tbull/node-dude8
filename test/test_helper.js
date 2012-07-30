@@ -50,17 +50,19 @@ exports.echoServer = function (options) {
     server = Connect.createServer(
       options,
       Connect.bodyParser(),
-      Connect.router(function (app) {
-          _routeall(app, /foo(.*)/, handler);
-        })
+//      Connect.router(function (app) {
+//          _routeall(app, /foo(.*)/, handler);
+//        })
+      Connect().use('/foo', handler)
     );
   } else {
     server = Connect.createServer(
       Connect.bodyParser(),
       Gzip(),
-      Connect.router(function (app) {
-          _routeall(app, /foo(.*)/, handler);
-        })
+//      Connect.router(function (app) {
+//          _routeall(app, /foo(.*)/, handler);
+//        })
+      Connect().use('/foo', handler)
     );
   }
 
@@ -121,7 +123,7 @@ exports.redirectServer = function (code) {
 exports.nullServer = function () {
   var port = exports.port;
   exports.port += 1;
-  
+
   function handler(request, response, next) {
     var headers = {
       'Content-Type': 'application/json',

@@ -1,0 +1,12 @@
+wwwdude used to use expresso <https://github.com/visionmedia/expresso/> as test driver framework.
+expresso has been superseeded by mocha <http://visionmedia.github.com/mocha/>.
+mocha should behave like expresso if passed the `-u exports` option. As in
+    mocha -u exports test/wwwdude-simple.js
+or
+    node ../mocha/bin/mocha -u exports test/wwwdude-simple.js
+
+However, that doesn't work. mocha doesn't like the way the `beforeExit()` function is used. So I disabled it in test/client_helper.js.
+
+Now the usage of the `connect` module <https://github.com/senchalabs/connect> has changed over time. So I fixed that for the echoServer in test/test_helper.js (without knowing what I'm doing, I've never used connect before). Now the wwwdude-simple.js test /runs/, but does not /pass/. It's raining timeout errors.
+
+I don't know what to do at this point. I don't know any of the libraries used, and I would have to explore all those libs, obsolete and current ones, and figure out the difference. I find this not adequate. So for the time being the tests are dead, to be resurrected later. Help is welcome.
