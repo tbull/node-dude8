@@ -4,20 +4,19 @@
   "version" : "0.1.0",
   "author" : "Sven Pfleiderer <sven@roothausen.de>",
   "directories" : { "lib" : "lib" },
-  "repository" : { 
+  "repository" : {
     "type" : "git",
     "url" : "http://github.com/pfleidi/node-wwwdude.git"
   },
-  "bugs" : { 
-    "web" : "http://github.com/pfleidi/node-wwwdude/issues" 
-  }, 
-  "licenses" : [{ 
+  "bugs" : {
+    "web" : "http://github.com/pfleidi/node-wwwdude/issues"
+  },
+  "licenses" : [{
       "type" : "MIT",
       "url" : "http://github.com/pfleidi/node-wwwdude/raw/master/LICENSE"
     }],
   "dependencies" : {
     "xml2js" : "= 0.1.9",
-    "compress" : "= 0.1.9"
   },
   "devDependencies": {
     "expresso" : ">= 0.8.1",
